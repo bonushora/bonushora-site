@@ -1,66 +1,146 @@
-import AppLayout from "../layouts/AppLayout";
-import Button from "../components/Button";
-import Card from "../components/Card";
+import React from 'react';
 
 export default function Home() {
   return (
-    <AppLayout>
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans antialiased">
       
-      {/* HERO */}
-      <section className="text-center px-6 py-28">
-        <h1 className="text-6xl font-bold">
-          O tempo tem valor.
-        </h1>
+      {/* HEADER / NAV */}
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="text-xl font-bold tracking-tight text-blue-600">BônusHora</span>
+            <span className="text-xs font-semibold px-2 py-0.5 bg-blue-50 text-blue-700 rounded-full border border-blue-200">Protocolo</span>
+          </div>
+          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+            <a href="/como-funciona" className="hover:text-blue-600 transition-colors">Como Funciona</a>
+            <a href="/filosofia" className="hover:text-blue-600 transition-colors">Filosofia</a>
+            <a href="/roadmap" className="hover:text-blue-600 transition-colors">Cronograma</a>
+            <a href="/manual" className="hover:text-blue-600 transition-colors">Manual Técnico</a>
+          </nav>
+          <div>
+            <span className="text-xs font-medium bg-slate-900 text-white px-4 py-2 rounded-lg shadow-sm">
+              Tecnologia Social
+            </span>
+          </div>
+        </div>
+      </header>
 
-        <p className="mt-6 text-xl text-gray-600 max-w-2xl mx-auto">
-          BônusHora é uma rede de colaboração baseada em compromisso, reputação e confiança entre profissionais.
-        </p>
+      {/* HERO SECTION */}
+      <section className="relative overflow-hidden bg-white pt-24 pb-20 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+              Multiplicando o <span className="text-blue-600">impacto social</span> e otimizando recursos públicos através do tempo.
+            </h1>
+            <p className="mt-6 text-xl text-slate-600 leading-relaxed">
+              Uma infraestrutura de tecnologia social para criar redes de cooperação autossustentáveis em municípios, cooperativas e ecossistemas comunitários.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a href="/como-funciona" className="bg-blue-600 text-white font-medium px-6 py-3 rounded-xl hover:bg-blue-700 transition-all shadow-md shadow-blue-200">
+                Conhecer o Protocolo
+              </a>
+              <a href="/filosofia" className="bg-slate-100 text-slate-700 font-medium px-6 py-3 rounded-xl hover:bg-slate-200 transition-all border border-slate-200">
+                Nossa Filosofia
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-50/50 to-transparent hidden lg:block" />
+      </section>
 
-        <div className="mt-10 flex justify-center gap-4">
-          <Button variant="primary">Conhecer o projeto</Button>
-          <Button variant="outline">Entrar no app</Button>
+      {/* O DESAFIO / PROPOSTA */}
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">O Paradoxo Local</span>
+            <h2 className="text-3xl font-bold text-slate-900 mt-2 tracking-tight">
+              Escassez de Circulação Fiduciária vs. Abundância de Capacidade
+            </h2>
+            <p className="mt-4 text-slate-600 leading-relaxed">
+              O principal gargalo do desenvolvimento socioeconômico em territórios periféricos ou regiões isoladas não é a falta de habilidades ou de disposição ao trabalho. O problema central é a <strong>escassez estrutural de meio de troca convencional (Real)</strong>.
+            </p>
+            <p className="mt-4 text-slate-600 leading-relaxed">
+              O cidadão tem tempo livre e conhecimento prático; a comunidade possui demandas urgentes de zeladoria, apoio escolar e assistência; mas as trocas não acontecem porque não há recursos disponíveis para intermediar o início dessas atividades.
+            </p>
+          </div>
+          <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 text-white shadow-xl">
+            <h3 className="text-xl font-bold mb-4">A Abordagem BônusHora</h3>
+            <p className="text-blue-100 leading-relaxed text-sm mb-6">
+              O protocolo utiliza o tempo como unidade de conta e registro de contribuição imutável. Ele permite que o Estado e entidades parceiras ativem a força de trabalho local e promovam o bem-estar coletivo sem depender da injeção contínua e insustentável de recursos do caixa público.
+            </p>
+            <div className="border-t border-white/20 pt-4 flex items-center justify-between text-xs font-medium text-blue-200">
+              <span>✓ Registro de Atividade Real</span>
+              <span>✓ Foco Estrito em Utilidade</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* COMO FUNCIONA */}
-      <section className="bg-gray-50 px-6 py-20">
-        <h2 className="text-3xl font-bold text-center">Como funciona</h2>
+      {/* EFICIÊNCIA FISCAL / MULTIPLICADOR */}
+      <section className="py-20 bg-white border-t border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">Eficiência Pública</span>
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 mt-2">O Efeito Multiplicador do Gasto Social</h2>
+            <p className="mt-4 text-slate-600 text-sm">
+              Em auxílios financeiros tradicionais, o recurso do governo se encerra no primeiro consumo. O Protocolo BônusHora transforma o gasto linear em uma dinâmica circular sustentável.
+            </p>
+          </div>
 
-        <div className="mt-10 max-w-4xl mx-auto grid gap-4">
-          <Card>1. Criação de conta</Card>
-          <Card>2. Oferta ou solicitação de serviço</Card>
-          <Card>3. Compromisso estabelecido</Card>
-          <Card>4. Execução do serviço</Card>
-          <Card>5. Registro do compromisso</Card>
-          <Card>6. Evolução da reputação</Card>
+          <div className="overflow-x-auto border border-slate-200 rounded-xl bg-white shadow-sm">
+            <table className="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr className="bg-slate-100 text-slate-700 font-semibold border-b border-slate-200">
+                  <th className="p-4">Indicador de Gestão</th>
+                  <th className="p-4">Modelos Assistenciais Tradicionais</th>
+                  <th className="p-4 text-blue-600">Modelo Cooperativo BônusHora</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 text-slate-600">
+                <tr>
+                  <td className="p-4 font-medium text-slate-900">Eficiência Orçamentária</td>
+                  <td className="p-4">Linear (1:1). O impacto cessa na primeira compra realizada.</td>
+                  <td className="p-4 bg-blue-50/30 text-slate-800 font-medium">Exponencial. O crédito de tempo continua gerando serviços locais por prazo indeterminado.</td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-medium text-slate-900">Resiliência Comunitária</td>
+                  <td className="p-4">Dependência contínua do envio regular de caixas públicos.</td>
+                  <td className="p-4 bg-blue-50/30 text-slate-800 font-medium">Autonomia. A rede local opera baseada no tempo e capacidade operacional dos próprios moradores.</td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-medium text-slate-900">Auditoria e Controle</td>
+                  <td className="p-4">Lenta e retrospectiva. Depende de notas e relatórios em papel.</td>
+                  <td className="p-4 bg-blue-50/30 text-slate-800 font-medium">Em tempo real (SCI). Eventos criptografados na rede e auditáveis a qualquer momento.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
-      {/* FILOSOFIA */}
-      <section className="px-6 py-20 text-center">
-        <h2 className="text-3xl font-bold">Filosofia</h2>
-
-        <p className="mt-6 max-w-3xl mx-auto text-gray-600">
-          O BônusHora não é dinheiro, não é crédito financeiro e não é dívida.
-          É um sistema de registro de compromisso humano baseado em confiança e reputação.
-        </p>
-      </section>
-
-      {/* CTA FINAL */}
-      <section className="px-6 py-24 text-center bg-black text-white">
-        <h2 className="text-3xl font-bold">
-          Comece a construir sua reputação
-        </h2>
-
-        <p className="mt-4 text-gray-300">
-          O futuro da colaboração é baseado em confiança.
-        </p>
-
-        <div className="mt-8">
-          <Button variant="outline">Entrar no aplicativo</Button>
+      {/* DIRETRIZES DE NÃO-ESPECULAÇÃO */}
+      <section className="py-16 bg-slate-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+          <div className="flex items-center gap-3 text-amber-600 font-bold mb-4 text-sm">
+            <span>🛡️ Diretrizes de Conformidade e Proteção Regulatória</span>
+          </div>
+          <p className="text-xs text-slate-500 leading-relaxed mb-4">
+            O ativo de utilidade BônusHora ($BH$) foi concebido estritamente como um indexador de contabilidade de tempo e ferramenta de coordenação social para ajuda mútua. Ele <strong>não possui</strong> finalidades financeiras, não concede direitos a dividendos, participações societárias ou rendimentos, e está fora do escopo de atuação do mercado de valores mobiliários.
+          </p>
+          <p className="text-xs text-slate-500 leading-relaxed">
+            Sua emissão é estritamente vinculada à comprovação física da prestação de serviços por meio do mecanismo PoSQ/PoVC, atuando como um protocolo fechado de uso utilitário institucional de economia circular.
+          </p>
         </div>
       </section>
 
-    </AppLayout>
+      {/* FOOTER */}
+      <footer className="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-400">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p>© 2026 Plataforma BônusHora. Todos os direitos reservados de propriedade intelectual.</p>
+          <p className="mt-2">Protegido sob a Licença Creative Commons Atribuição-NãoComercial-SemDerivações 4.0 Internacional (CC BY-NC-ND 4.0).</p>
+        </div>
+      </footer>
+
+    </div>
   );
 }
