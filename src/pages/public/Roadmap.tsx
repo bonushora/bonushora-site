@@ -83,9 +83,9 @@ export default function Roadmap() {
             <div className="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-slate-300 border-4 border-white shadow-sm" />
             <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm opacity-75">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Fase 4 — Planejada</span>
-              <h3 className="text-lg font-bold text-slate-900 mt-1">Piloto BH-SMC — Telemetria de Impacto (SCI) e Evolução Experimental</h3>
+              <h3 className="text-lg font-bold text-slate-900 mt-1">Piloto BH-SMC — Telemetria de Impacto (SCI) e Validação Operacional</h3>
               <p className="mt-2 text-slate-600 text-sm leading-relaxed">
-                Evolução do Piloto BH-SMC com telemetria de impacto social, indicadores SCI, validação operacional e preparação de futuras demonstrações em ambientes controlados.
+                Evolução do Piloto BH-SMC com telemetria de impacto social, indicadores SCI, ampliação da validação operacional e preparação de futuras demonstrações em ambientes controlados.
               </p>
             </div>
           </div>
