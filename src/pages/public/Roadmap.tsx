@@ -71,9 +71,9 @@ export default function Roadmap() {
             <div className="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-blue-500 border-4 border-white shadow-sm animate-pulse" />
             <div className="bg-white p-6 rounded-xl border border-blue-200 shadow-md">
               <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Fase 3 — Em Execução</span>
-              <h3 className="text-lg font-bold text-slate-900 mt-1">Interface Institucional e Landing Page</h3>
+              <h3 className="text-lg font-bold text-slate-900 mt-1">Portal Institucional e Demonstração do Piloto BH-SMC</h3>
               <p className="mt-2 text-slate-600 text-sm leading-relaxed">
-                Estruturação do portal público `www.bonushora.com.br` com foco em governança corporativa e utilidade social para apresentação a prefeituras e órgãos públicos de fiscalização.
+                Estruturação do portal público `www.bonushora.com.br` como ambiente institucional de apresentação da arquitetura BônusHora e demonstração controlada da evolução do Piloto BH-SMC.
               </p>
             </div>
           </div>
@@ -83,9 +83,9 @@ export default function Roadmap() {
             <div className="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-slate-300 border-4 border-white shadow-sm" />
             <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm opacity-75">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Fase 4 — Planejada</span>
-              <h3 className="text-lg font-bold text-slate-900 mt-1">Painel Telemetria de Impacto (SCI) e Homologação</h3>
+              <h3 className="text-lg font-bold text-slate-900 mt-1">Piloto BH-SMC — Telemetria de Impacto (SCI) e Evolução Experimental</h3>
               <p className="mt-2 text-slate-600 text-sm leading-relaxed">
-                Desenvolvimento completo da terceira camada (Serviço de Telemetria de Impacto Social) para a geração de relatórios de auditoria pública automatizada e preparação para testes de campo municipais.
+                Evolução do Piloto BH-SMC com telemetria de impacto social, indicadores SCI, validação operacional e preparação de futuras demonstrações em ambientes controlados.
               </p>
             </div>
           </div>
