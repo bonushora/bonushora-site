@@ -48,6 +48,185 @@ export default function Home() {
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-50/50 to-transparent hidden lg:block" />
       </section>
 
+      {/* VÍDEO PITCH INSTITUCIONAL */}
+      <section className="py-20 bg-slate-100 border-b border-slate-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center mb-10">
+            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+              Apresentação Institucional
+            </span>
+
+            <h2 className="text-3xl font-bold text-slate-900 mt-2">
+              Como o BônusHora transforma tempo em impacto social
+            </h2>
+
+            <p className="mt-4 text-slate-600">
+              Conheça a visão, o problema e a proposta da infraestrutura de tecnologia social.
+            </p>
+          </div>
+
+          <div className="relative aspect-video overflow-hidden rounded-2xl shadow-xl bg-black">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://app.heygen.com/embeds/7e50f25251fb48fc9c2d2116420f0412"
+              title="Vídeo Pitch Institucional BônusHora"
+              frameBorder="0"
+              allow="encrypted-media; fullscreen;"
+              allowFullScreen
+            />
+          </div>
+
+        </div>
+      </section>
+
+      {/* FLUXOGRAMA DO ECOSSISTEMA */}
+      <section className="py-20 bg-white border-b border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div className="text-center mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+              Como Funciona
+            </span>
+
+            <h2 className="text-3xl font-bold text-slate-900 mt-2">
+              Do tempo disponível ao impacto social mensurável
+            </h2>
+
+            <p className="mt-4 text-slate-600">
+              O Protocolo BônusHora conecta capacidades locais,
+              necessidades reais e geração de valor comunitário.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-5 gap-4 items-center">
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 text-center">
+              <div className="text-2xl mb-2">👥</div>
+              <strong className="text-slate-900">
+                Comunidade
+              </strong>
+              <p className="text-sm text-slate-600 mt-2">
+                Pessoas e organizações conectadas.
+              </p>
+            </div>
+
+            <div className="hidden md:block text-blue-600 text-3xl text-center">
+              →
+            </div>
+
+            <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-5 text-center">
+              <div className="text-2xl mb-2">🤝</div>
+              <strong className="text-slate-900">
+                Serviços
+              </strong>
+              <p className="text-sm text-slate-600 mt-2">
+                Capacidades transformadas em ações.
+              </p>
+            </div>
+
+            <div className="hidden md:block text-blue-600 text-3xl text-center">
+              →
+            </div>
+
+            <div className="bg-slate-900 rounded-xl p-5 text-center text-white">
+              <div className="text-2xl mb-2">⚙️</div>
+              <strong>
+                Registro + Impacto
+              </strong>
+              <p className="text-sm text-slate-300 mt-2">
+                Atividades auditáveis e mensuráveis.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* MAPA DO ECOSSISTEMA */}
+      <section className="py-20 bg-slate-50 border-b border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div className="text-center mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+              Ecossistema BônusHora
+            </span>
+
+            <h2 className="text-3xl font-bold text-slate-900 mt-2">
+              Uma rede conectando pessoas, instituições e impacto social
+            </h2>
+
+            <p className="mt-4 text-slate-600">
+              O protocolo integra diferentes atores em uma infraestrutura
+              colaborativa de coordenação e registro.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 items-center">
+
+            <div className="space-y-6">
+              <div className="bg-white border border-slate-200 rounded-xl p-6 text-center shadow-sm">
+                <div className="text-3xl mb-3">🏛️</div>
+                <h3 className="font-bold text-slate-900">
+                  Poder Público
+                </h3>
+                <p className="text-sm text-slate-600 mt-2">
+                  Gestão, políticas públicas e acompanhamento de impacto.
+                </p>
+              </div>
+
+              <div className="bg-white border border-slate-200 rounded-xl p-6 text-center shadow-sm">
+                <div className="text-3xl mb-3">🤝</div>
+                <h3 className="font-bold text-slate-900">
+                  Entidades Parceiras
+                </h3>
+                <p className="text-sm text-slate-600 mt-2">
+                  Organizações que fortalecem a rede local.
+                </p>
+              </div>
+            </div>
+
+
+            <div className="bg-blue-600 rounded-2xl p-8 text-center text-white shadow-xl">
+              <div className="text-4xl mb-4">⏱️</div>
+              <h3 className="text-xl font-bold">
+                BônusHora
+              </h3>
+              <p className="text-blue-100 mt-3 text-sm">
+                Infraestrutura de coordenação social baseada em tempo,
+                contribuição e utilidade comprovada.
+              </p>
+            </div>
+
+
+            <div className="space-y-6">
+              <div className="bg-white border border-slate-200 rounded-xl p-6 text-center shadow-sm">
+                <div className="text-3xl mb-3">👥</div>
+                <h3 className="font-bold text-slate-900">
+                  Comunidades
+                </h3>
+                <p className="text-sm text-slate-600 mt-2">
+                  Pessoas conectando capacidades e necessidades.
+                </p>
+              </div>
+
+              <div className="bg-white border border-slate-200 rounded-xl p-6 text-center shadow-sm">
+                <div className="text-3xl mb-3">🛠️</div>
+                <h3 className="font-bold text-slate-900">
+                  Prestadores
+                </h3>
+                <p className="text-sm text-slate-600 mt-2">
+                  Serviços locais registrados e reconhecidos.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
       {/* O DESAFIO / PROPOSTA */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
