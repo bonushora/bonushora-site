@@ -1,0 +1,29 @@
+{
+  "atlas_source_file": "src/components/GeoAtlas.tsx",
+  "atlas_source_sha256": "722d946b048cf0cbb841adaa4a856e01e87a27ef33346d59eb05bc7789c7fd28",
+  "data_sources": [
+    {
+      "code_constant": "BRAZIL_URL",
+      "content_sha256": null,
+      "immutable_revision": null,
+      "license_verification": "PENDING",
+      "reproducibility": "NOT_QUALIFIED",
+      "retrieval": "RUNTIME_EXTERNAL_READ",
+      "url": "https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/brazil-states.geojson"
+    },
+    {
+      "code_constant": "WORLD_URL",
+      "content_sha256": null,
+      "immutable_revision": null,
+      "license_verification": "PENDING",
+      "reproducibility": "NOT_QUALIFIED",
+      "retrieval": "RUNTIME_EXTERNAL_READ",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson"
+    }
+  ],
+  "public_scientific_registry": "DISABLED_BY_POLICY",
+  "purpose": "Descriptive cartography only; never synthetic scientific results",
+  "qualification_note": "A URL is not a pinned dataset. No bytes were fetched or validated by this mission.",
+  "schema": "BH-CARTOGRAPHY-PROVENANCE-v0.1",
+  "status": "UNPINNED_NOT_QUALIFIED"
+}

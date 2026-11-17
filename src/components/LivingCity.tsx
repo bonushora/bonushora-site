@@ -2,56 +2,15 @@ import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {pathFor,type Lang} from '../data/content';
 import {citySnapshots} from '../data/cityHistory';
+import {districts} from '../data/cityDistricts';
+import {CITY_SCENARIOS,districtsForScenario,type CityScenario} from '../data/cityScenarios';
+import {layoutDistricts,type PositionedDistrict} from '../data/cityLayout';
 import {districtResearch} from '../data/cityResearch';
 import {experiments} from '../data/content';
 import './LivingCity.css';
 
-type District = {
- id:string;
- pt:string;
- en:string;
- descriptionPt:string;
- descriptionEn:string;
- status:'planned'|'documentary';
- x:number;
- y:number;
- height:number;
- color:string;
-};
-
-const districts:District[]=[
- {id:'lab',pt:'Laboratório',en:'Laboratory',
- descriptionPt:'Experimentos econômicos E01–E06.',
- descriptionEn:'Economic experiments E01–E06.',
- status:'planned',x:110,y:205,height:74,color:'#3987b5'},
- {id:'library',pt:'Biblioteca',en:'Library',
- descriptionPt:'Fontes científicas e documentação.',
- descriptionEn:'Scientific sources and documentation.',
- status:'documentary',x:345,y:135,height:83,color:'#479c86'},
- {id:'commerce',pt:'Comércio',en:'Commerce',
- descriptionPt:'Estudo da economia tradicional.',
- descriptionEn:'Study of the traditional economy.',
- status:'planned',x:595,y:205,height:60,color:'#bf9655'},
- {id:'community',pt:'Comunidade',en:'Community',
- descriptionPt:'Pesquisa sobre economia complementar.',
- descriptionEn:'Research on the complementary economy.',
- status:'planned',x:95,y:410,height:57,color:'#ae82b2'},
- {id:'observatory',pt:'Observatório',en:'Observatory',
- descriptionPt:'Indicadores e resultados científicos.',
- descriptionEn:'Scientific indicators and results.',
- status:'planned',x:340,y:445,height:95,color:'#5c88bd'},
- {id:'museum',pt:'Museu do Tempo',en:'Time Museum',
- descriptionPt:'Memória histórica e versões da pesquisa.',
- descriptionEn:'Research history and versions.',
- status:'documentary',x:595,y:420,height:76,color:'#b57f67'},
- {id:'council',pt:'Conselho',en:'Council',
- descriptionPt:'Governança e decisões documentadas.',
- descriptionEn:'Governance and documented decisions.',
- status:'documentary',x:755,y:315,height:70,color:'#738b98'}
-];
-
 function Building({item,selected,onSelect,lang}:{
- item:District;
+ item:PositionedDistrict;
  selected:boolean;
  onSelect:()=>void;
  lang:Lang;
@@ -119,6 +78,8 @@ function Building({item,selected,onSelect,lang}:{
 
 export default function LivingCity({lang}:{lang:Lang}){
  const [selectedId,setSelectedId]=useState('lab');
+ const [scenario,setScenario]=useState<CityScenario>(7);
+ const cityLayout=layoutDistricts(districtsForScenario(scenario));
  const [snapshotId,setSnapshotId]=useState(citySnapshots[0].id);
  const selected=districts.find(d=>d.id===selectedId)??districts[0];
  const pt=lang==='pt';
@@ -158,11 +119,21 @@ export default function LivingCity({lang}:{lang:Lang}){
   </div>
 
   <div className="living-city-map">
-   <svg
-    viewBox="0 0 1000 640"
+   <div role="group" aria-label={lang==='pt'?'Cenários visuais de teste':'Visual test scenarios'} style={{display:'flex',flexWrap:'wrap',gap:8,alignItems:'center',margin:'12px 0'}}>
+      {CITY_SCENARIOS.map(n=><button key={n} type="button" aria-pressed={scenario===n} onClick={()=>{setScenario(n);setSelectedId('lab');}} style={{padding:'8px 12px',borderRadius:8,border:'1px solid #8aa6b5',background:scenario===n?'#1a6581':'#fff',color:scenario===n?'#fff':'#173b4f',cursor:'pointer'}}>{n} {lang==='pt'?'distritos':'districts'}</button>)}
+    </div>
+    {scenario>7&&<p role="status" style={{margin:'6px 0 12px',fontSize:14,color:'#704713',fontWeight:600}}>{lang==='pt'?`SIMULAÇÃO VISUAL: ${scenario-7} distritos artificiais; não representam dados científicos nem participantes reais.`:`VISUAL SIMULATION: ${scenario-7} artificial districts; not scientific data or real participants.`}</p>}
+    <div style={{overflowX:"auto",maxWidth:"100%",WebkitOverflowScrolling:"touch"}}><svg
+    viewBox={`0 0 ${cityLayout.width} ${cityLayout.height}`} style={{minWidth:scenario>7?`${Math.min(cityLayout.width,1600)}px`:undefined}}
     role="group"
     aria-label={pt?'Mapa isométrico interativo':'Interactive isometric map'}
    >
+    {cityLayout.expansionCount>0&&<rect
+     x="995" y="0"
+     width={cityLayout.width-995}
+     height={cityLayout.height}
+     fill="#d7edde"
+    />}
     <path
      d="M45 248 L480 18 L955 266 L520 605 Z"
      fill="#cce9d9"
@@ -205,14 +176,14 @@ export default function LivingCity({lang}:{lang:Lang}){
      <circle cx={x+13} cy={y-6} r="16" fill="#5da982"/>
     </g>)}
 
-    {districts.map(d=><Building
+    {cityLayout.districts.map(d=><Building
      key={d.id}
      item={d}
      selected={selectedId===d.id}
      onSelect={()=>setSelectedId(d.id)}
      lang={lang}
     />)}
-   </svg>
+   </svg></div>
   </div>
 
   <article className="city-snapshot-panel" aria-live="polite">
